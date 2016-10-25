@@ -241,6 +241,9 @@ class Terminal(Gtk.VBox):
         terminalbox = Gtk.HBox()
         self.scrollbar = Gtk.VScrollbar(self.vte.get_vadjustment())
 
+        scrollbar_style_context = self.scrollbar.get_style_context()
+        scrollbar_style_context.add_class("terminator-scrollbar");
+
         terminalbox.pack_start(self.vte, True, True, 0)
         terminalbox.pack_start(self.scrollbar, False, True, 0)
         terminalbox.show_all()
